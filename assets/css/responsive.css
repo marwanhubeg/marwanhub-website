@@ -1,0 +1,271 @@
+/* ملف الأنماط المتجاوبة - ماروان هوب */
+
+/* شاشات كبيرة (1200px فما فوق) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+    
+    .hero-title {
+        font-size: 4rem;
+    }
+}
+
+/* شاشات متوسطة (992px - 1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .section-title {
+        font-size: 2.25rem;
+    }
+}
+
+/* شاشات صغيرة (768px - 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero-stats {
+        gap: var(--space-xl);
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .skills-categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .philosophy-principles {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* شاشات الهواتف (576px - 767px) */
+@media (max-width: 767px) and (min-width: 576px) {
+    .container {
+        max-width: 540px;
+        padding: 0 var(--space-sm);
+    }
+    
+    .hero {
+        padding-top: 100px;
+        padding-bottom: var(--space-xl);
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: var(--space-lg);
+        align-items: center;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+    
+    .nav-menu {
+        display: none;
+    }
+    
+    .nav-toggle {
+        display: block;
+    }
+    
+    .nav-menu.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--bg-white);
+        padding: var(--space-md);
+        box-shadow: var(--shadow-md);
+        z-index: 1000;
+    }
+    
+    .journey-timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-item {
+        flex-direction: row !important;
+        margin-left: 60px;
+    }
+    
+    .timeline-year {
+        position: absolute;
+        left: -90px;
+        margin: 0;
+    }
+    
+    .skills-categories {
+        grid-template-columns: 1fr;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .philosophy-principles {
+        grid-template-columns: 1fr;
+    }
+    
+    .philosophy-quote {
+        font-size: 1.2rem;
+        padding: var(--space-lg);
+    }
+    
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* شاشات الهواتف الصغيرة (أقل من 576px) */
+@media (max-width: 575px) {
+    .container {
+        padding: 0 var(--space-sm);
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .section {
+        padding: var(--space-xl) 0;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+        margin-bottom: var(--space-xl);
+    }
+    
+    .timeline-content {
+        padding: var(--space-md);
+    }
+    
+    .timeline-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .skill-category {
+        padding: var(--space-lg);
+    }
+    
+    .project-card {
+        padding: var(--space-lg);
+    }
+    
+    .project-title {
+        font-size: 1.3rem;
+    }
+    
+    .principle {
+        padding: var(--space-lg);
+    }
+    
+    .contact-item {
+        padding: var(--space-md);
+    }
+    
+    .footer-brand {
+        font-size: 1.5rem;
+    }
+}
+
+/* تحسينات للأجهزة التي تدعم hover */
+@media (hover: hover) {
+    .skill-tag:hover {
+        background-color: var(--primary-color);
+        color: var(--text-white);
+    }
+}
+
+/* تحسينات للأجهزة التي لا تدعم hover */
+@media (hover: none) {
+    .btn {
+        padding: var(--space-lg) var(--space-xl);
+    }
+    
+    .nav-link {
+        padding: var(--space-md) var(--space-lg);
+    }
+}
+
+/* تحسينات للوضع الداكن */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-dark: #f8fafc;
+        --text-light: #cbd5e1;
+        --bg-light: #0f172a;
+        --bg-white: #1e293b;
+    }
+    
+    .project-card {
+        background-color: #1e293b;
+        border-color: #334155;
+    }
+    
+    .skill-tag {
+        background-color: #334155;
+        color: #cbd5e1;
+    }
+}
+
+/* تحسينات للطباعة */
+@media print {
+    .navbar,
+    .hero-actions,
+    .social-links {
+        display: none;
+    }
+    
+    body {
+        color: #000;
+        background: #fff;
+    }
+    
+    .section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}

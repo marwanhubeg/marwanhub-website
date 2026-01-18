@@ -1,3 +1,7 @@
 User-agent: *
 Allow: /
-Sitemap: https://marwanhub.tech/sitemap.xml
+Sitemap: https://marwanhubeg.github.io/marwanhub-website/sitemap.xml
+
+# Disallow specific paths (if needed)
+# Disallow: /admin/
+# Disallow: /private/

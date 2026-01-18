@@ -1,0 +1,40 @@
+{
+  "site": {
+    "name": "ماروان هوب",
+    "url": "https://marwanhubeg.github.io/marwanhub-website",
+    "description": "منصة عربية مفتوحة المصدر لبناء أدوات وحلول رقمية",
+    "author": "مروان هوب",
+    "email": "contact@marwanhub.tech",
+    "github": "https://github.com/marwanhubeg",
+    "twitter": "https://twitter.com/marwanhub_tech"
+  },
+  "features": {
+    "responsive": true,
+    "dark_mode": true,
+    "seo": true,
+    "analytics": false,
+    "contact_form": false
+  },
+  "technologies": {
+    "frontend": ["HTML5", "CSS3", "JavaScript"],
+    "styling": ["CSS Grid", "Flexbox", "Custom Properties"],
+    "icons": ["Font Awesome"],
+    "fonts": ["Google Fonts (Cairo)"]
+  },
+  "sections": [
+    "hero",
+    "story",
+    "skills", 
+    "projects",
+    "philosophy",
+    "contact"
+  ],
+  "deployment": {
+    "platform": "GitHub Pages",
+    "branch": "main",
+    "auto_deploy": true,
+    "custom_domain": false
+  },
+  "last_updated": "2026-01-19T10:00:00Z",
+  "version": "1.0.0"
+}
