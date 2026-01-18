@@ -1,0 +1,16 @@
+# المجلدات الاحتياطية
+backup/*
+
+# ملفات النظام
+.DS_Store
+Thumbs.db
+
+# بيئات التطوير
+node_modules/
+.env
+.env.local
+
+# ملفات البناء
+dist/
+build/
+*.log
