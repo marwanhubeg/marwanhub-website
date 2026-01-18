@@ -3,395 +3,698 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ماروان هوب - بناء المستقبل الرقمي العربي</title>
+    <title>👑 لوحة تحكم ماروان هوب - حافظ القمة</title>
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/responsive.css">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     
-    <!-- Meta Tags -->
-    <meta name="description" content="ماروان هوب - منصة عربية مفتوحة المصدر لبناء أدوات وحلول رقمية تنافس عالمياً">
-    <meta name="keywords" content="مطور عربي, برمجة, CLI عربي, مفتوح المصدر, تقنية عربية">
-    <meta name="author" content="ماروان هوب">
-    <meta property="og:title" content="ماروان هوب - بناء المستقبل الرقمي العربي">
-    <meta property="og:description" content="منصة عربية مفتوحة المصدر لبناء أدوات وحلول رقمية">
-    <meta property="og:image" content="https://marwanhubeg.github.io/marwanhub-website/assets/images/og-image.png">
-    <meta property="og:url" content="https://marwanhubeg.github.io/marwanhub-website">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="description" content="لوحة التحكم الذكية لحافظ القمة - مروان هوب">
 </head>
 <body>
-    <!-- شريط التنقل -->
-    <nav class="navbar">
-        <div class="container">
+    <!-- شريط التنقل العلوي -->
+    <nav class="top-navbar">
+        <div class="nav-container">
+            <!-- الشعار -->
             <div class="nav-brand">
-                <i class="fas fa-code"></i>
-                <span>ماروان هوب</span>
+                <div class="brand-icon">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <div class="brand-text">
+                    <h1>ماروان هوب</h1>
+                    <p class="brand-subtitle">👑 حافظ القمة</p>
+                </div>
             </div>
-            <div class="nav-menu">
-                <a href="#story" class="nav-link">قصتي</a>
-                <a href="#skills" class="nav-link">مهاراتي</a>
-                <a href="#projects" class="nav-link">مشاريعي</a>
-                <a href="#philosophy" class="nav-link">فلسفتي</a>
-                <a href="#contact" class="nav-link">تواصل</a>
+            
+            <!-- إشعارات -->
+            <div class="nav-actions">
+                <button class="nav-btn notification-btn" id="notificationBtn">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                
+                <!-- بحث سريع -->
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="🔍 بحث سريع...">
+                </div>
+                
+                <!-- المستخدم -->
+                <div class="user-profile">
+                    <div class="user-avatar">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">مروان هوب</span>
+                        <span class="user-role">حافظ القمة</span>
+                    </div>
+                </div>
             </div>
-            <button class="nav-toggle" aria-label="قائمة التنقل">
-                <i class="fas fa-bars"></i>
-            </button>
         </div>
     </nav>
 
-    <!-- قسم الهيرو -->
-    <header class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">🚀 مرحباً، أنا مروان</h1>
-                <p class="hero-subtitle">مطور برمجيات عربي، أبني أدوات وحلول رقمية تنافس عالمياً</p>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">2+</span>
-                        <span class="stat-label">سنوات خبرة</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">15+</span>
-                        <span class="stat-label">مشروع منجز</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">10+</span>
-                        <span class="stat-label">تقنية أتقنها</span>
-                    </div>
-                </div>
-                <div class="hero-actions">
-                    <a href="#projects" class="btn btn-primary">شاهد مشاريعي</a>
-                    <a href="#contact" class="btn btn-secondary">تواصل معي</a>
-                </div>
+    <!-- الهيكل الرئيسي -->
+    <div class="dashboard-container">
+        <!-- القائمة الجانبية -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3><i class="fas fa-sliders-h"></i> القيادة</h3>
             </div>
-        </div>
-    </header>
-
-    <!-- قسم القصة -->
-    <section id="story" class="section story-section">
-        <div class="container">
-            <h2 class="section-title">📖 قصتي</h2>
-            <div class="story-content">
-                <p class="story-intro">
-                    بدأت رحلتي في عالم البرمجة بدافع الشغف وحب الاستكشاف. 
-                    ما بدأ كهواية تحول إلى شغف، ثم إلى تخصص، والآن إلى رسالة.
-                </p>
-                
-                <div class="journey-timeline">
-                    <!-- المحطة 1 -->
-                    <div class="timeline-item">
-                        <div class="timeline-year">2022</div>
-                        <div class="timeline-content">
-                            <h3>بداية الرحلة</h3>
-                            <p>تعلمت أساسيات البرمجة، HTML، CSS، JavaScript. 
-                            بنيت أول موقع ويب، واجهت أول تحدياتي.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- المحطة 2 -->
-                    <div class="timeline-item">
-                        <div class="timeline-year">2023</div>
-                        <div class="timeline-content">
-                            <h3>مرحلة التخصص</h3>
-                            <p>تعمقت في تطوير الويب، تعلمت React، Node.js، قواعد البيانات.
-                            أنشأت أول مشاريعي الحقيقية للعملاء.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- المحطة 3 -->
-                    <div class="timeline-item">
-                        <div class="timeline-year">2024</div>
-                        <div class="timeline-content">
-                            <h3>التحدي الكبير</h3>
-                            <p>تعلمت DevOps، Docker، CI/CD. 
-                            واجهت تحديات النشر والإدارة، تعلمت من الأخطاء.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- المحطة 4 -->
-                    <div class="timeline-item current">
-                        <div class="timeline-year">2025 - الآن</div>
-                        <div class="timeline-content">
-                            <h3>ماروان هوب</h3>
-                            <p>قررت بناء منصة عربية مفتوحة المصدر. 
-                            أطلق MarwanHub CLI أول أداة سطر أوامر عربية.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- قسم المهارات -->
-    <section id="skills" class="section skills-section">
-        <div class="container">
-            <h2 class="section-title">🛠️ مهاراتي وتقنياتي</h2>
             
-            <div class="skills-categories">
-                <!-- فئة الواجهات الأمامية -->
-                <div class="skill-category">
-                    <div class="category-header">
-                        <i class="fas fa-paint-brush"></i>
-                        <h3>تطوير الواجهات الأمامية</h3>
-                    </div>
-                    <div class="skills-list">
-                        <span class="skill-tag">HTML5 / CSS3</span>
-                        <span class="skill-tag">JavaScript (ES6+)</span>
-                        <span class="skill-tag">React.js</span>
-                        <span class="skill-tag">TypeScript</span>
-                        <span class="skill-tag">TailwindCSS</span>
-                        <span class="skill-tag">Responsive Design</span>
-                    </div>
+            <nav class="sidebar-menu">
+                <!-- قسم القيادة -->
+                <div class="menu-section">
+                    <h4 class="section-title"><i class="fas fa-chess-king"></i> القيادة الاستراتيجية</h4>
+                    <a href="#vision" class="menu-item active">
+                        <i class="fas fa-bullseye"></i>
+                        <span>الرؤية الاستراتيجية</span>
+                    </a>
+                    <a href="#decisions" class="menu-item">
+                        <i class="fas fa-chess-board"></i>
+                        <span>القرارات الاستراتيجية</span>
+                    </a>
+                    <a href="#alliances" class="menu-item">
+                        <i class="fas fa-handshake"></i>
+                        <span>التحالفات والشراكات</span>
+                    </a>
                 </div>
                 
-                <!-- فئة الواجهات الخلفية -->
-                <div class="skill-category">
-                    <div class="category-header">
-                        <i class="fas fa-server"></i>
-                        <h3>تطوير الواجهات الخلفية</h3>
-                    </div>
-                    <div class="skills-list">
-                        <span class="skill-tag">Node.js / Express</span>
-                        <span class="skill-tag">Python / Django</span>
-                        <span class="skill-tag">RESTful APIs</span>
-                        <span class="skill-tag">GraphQL</span>
-                        <span class="skill-tag">Authentication</span>
-                        <span class="skill-tag">PostgreSQL / MongoDB</span>
-                    </div>
+                <!-- قسم المراقبة -->
+                <div class="menu-section">
+                    <h4 class="section-title"><i class="fas fa-chart-line"></i> المراقبة والتحليل</h4>
+                    <a href="#analytics" class="menu-item">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>التحليلات الشاملة</span>
+                    </a>
+                    <a href="#metrics" class="menu-item">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>مؤشرات الأداء</span>
+                    </a>
+                    <a href="#reports" class="menu-item">
+                        <i class="fas fa-file-alt"></i>
+                        <span>التقارير الذكية</span>
+                    </a>
                 </div>
                 
-                <!-- فئة الأدوات والتشغيل -->
-                <div class="skill-category">
-                    <div class="category-header">
-                        <i class="fas fa-tools"></i>
-                        <h3>الأدوات والتشغيل</h3>
-                    </div>
-                    <div class="skills-list">
-                        <span class="skill-tag">Git & GitHub</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">CI/CD</span>
-                        <span class="skill-tag">AWS / Linux</span>
-                        <span class="skill-tag">Nginx</span>
-                        <span class="skill-tag">Bash Scripting</span>
-                    </div>
+                <!-- قسم المجتمع -->
+                <div class="menu-section">
+                    <h4 class="section-title"><i class="fas fa-users"></i> المجتمع والفرق</h4>
+                    <a href="#community" class="menu-item">
+                        <i class="fas fa-user-friends"></i>
+                        <span>نشاط المجتمع</span>
+                    </a>
+                    <a href="#contributors" class="menu-item">
+                        <i class="fas fa-user-check"></i>
+                        <span>المساهمون</span>
+                    </a>
+                    <a href="#teams" class="menu-item">
+                        <i class="fas fa-users-cog"></i>
+                        <span>فرق العمل</span>
+                    </a>
                 </div>
                 
-                <!-- فئة أخرى -->
-                <div class="skill-category">
-                    <div class="category-header">
-                        <i class="fas fa-brain"></i>
-                        <h3>أخرى</h3>
-                    </div>
-                    <div class="skills-list">
-                        <span class="skill-tag">مبادئ UI/UX</span>
-                        <span class="skill-tag">Agile / Scrum</span>
-                        <span class="skill-tag">الذكاء الاصطناعي</span>
-                        <span class="skill-tag">الحوسبة السحابية</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- قسم المشاريع -->
-    <section id="projects" class="section projects-section">
-        <div class="container">
-            <h2 class="section-title">📂 مشاريعي</h2>
-            
-            <div class="projects-grid">
-                <!-- المشروع المميز -->
-                <div class="project-card featured">
-                    <div class="project-badge">⭐ مميز</div>
-                    <div class="project-icon">
+                <!-- قسم المشاريع -->
+                <div class="menu-section">
+                    <h4 class="section-title"><i class="fas fa-rocket"></i> المشاريع والأدوات</h4>
+                    <a href="#projects" class="menu-item">
+                        <i class="fas fa-project-diagram"></i>
+                        <span>المشاريع النشطة</span>
+                    </a>
+                    <a href="#cli" class="menu-item">
                         <i class="fas fa-terminal"></i>
-                    </div>
-                    <h3 class="project-title">MarwanHub CLI</h3>
-                    <p class="project-description">
-                        أول أداة سطر أوامر عربية مفتوحة المصدر للمطورين العرب.
-                        توفر أوامر باللغة العربية لتسهيل المهام اليومية.
-                    </p>
-                    <div class="project-tech">
-                        <span>Node.js</span>
-                        <span>Commander.js</span>
-                        <span>CLI</span>
-                        <span>مفتوح المصدر</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/marwanhubeg/marwanhub-cli" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                        <a href="https://www.npmjs.com/package/marwanhub-cli" target="_blank" class="project-link">
-                            <i class="fab fa-npm"></i> npm
-                        </a>
-                    </div>
+                        <span>MarwanHub CLI</span>
+                    </a>
+                    <a href="#website" class="menu-item">
+                        <i class="fas fa-globe"></i>
+                        <span>الموقع الرسمي</span>
+                    </a>
                 </div>
                 
-                <!-- مشروع 2 -->
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-store"></i>
-                    </div>
-                    <h3 class="project-title">منصة التجارة الإلكترونية</h3>
-                    <p class="project-description">
-                        منصة متكاملة للتجارة الإلكترونية مع لوحة تحكم متقدمة،
-                        نظام دفع، وإدارة مخزون.
-                    </p>
-                    <div class="project-tech">
-                        <span>React</span>
-                        <span>Node.js</span>
-                        <span>MongoDB</span>
-                        <span>Stripe</span>
-                    </div>
-                </div>
-                
-                <!-- مشروع 3 -->
-                <div class="project-card">
-                    <div class="project-icon">
+                <!-- قسم النظام -->
+                <div class="menu-section">
+                    <h4 class="section-title"><i class="fas fa-cogs"></i> النظام والإعدادات</h4>
+                    <a href="#automation" class="menu-item">
                         <i class="fas fa-robot"></i>
+                        <span>الأنظمة الآلية</span>
+                    </a>
+                    <a href="#settings" class="menu-item">
+                        <i class="fas fa-sliders-h"></i>
+                        <span>الإعدادات</span>
+                    </a>
+                    <a href="#backup" class="menu-item">
+                        <i class="fas fa-database"></i>
+                        <span>النسخ الاحتياطي</span>
+                    </a>
+                </div>
+            </nav>
+            
+            <!-- حالة النظام -->
+            <div class="system-status">
+                <h4><i class="fas fa-heartbeat"></i> حالة النظام</h4>
+                <div class="status-items">
+                    <div class="status-item online">
+                        <i class="fas fa-circle"></i>
+                        <span>الموقع الرسمي</span>
                     </div>
-                    <h3 class="project-title">مساعد الذكاء الاصطناعي</h3>
-                    <p class="project-description">
-                        مساعد ذكي للإجابة على الأسئلة التقنية،
-                        يدعم اللغة العربية ويقدم حلولاً مخصصة.
-                    </p>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>OpenAI API</span>
-                        <span>FastAPI</span>
-                        <span>الذكاء الاصطناعي</span>
+                    <div class="status-item online">
+                        <i class="fas fa-circle"></i>
+                        <span>CLI على npm</span>
+                    </div>
+                    <div class="status-item warning">
+                        <i class="fas fa-circle"></i>
+                        <span>مجتمع Discord</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </aside>
 
-    <!-- قسم الفلسفة -->
-    <section id="philosophy" class="section philosophy-section">
-        <div class="container">
-            <h2 class="section-title">💡 فلسفتي</h2>
-            
-            <div class="philosophy-content">
-                <blockquote class="philosophy-quote">
-                    "أؤمن أن المطور العربي قادر على صنع أدوات تنافس عالمياً.
-                    مشروعي ليس مجرد كود، بل رسالة: أن التقنية العربية تستحق أن تكون في المقدمة."
-                </blockquote>
-                
-                <div class="philosophy-principles">
-                    <div class="principle">
-                        <div class="principle-icon">
-                            <i class="fas fa-gem"></i>
-                        </div>
-                        <h3>القيمة قبل الشهرة</h3>
-                        <p>أبني أدوات مفيدة حلول حقيقية، ليس فقط مشاريع للعرض.</p>
-                    </div>
+        <!-- المحتوى الرئيسي -->
+        <main class="main-content">
+            <!-- شريط الترحيب -->
+            <div class="welcome-banner" id="vision">
+                <div class="welcome-content">
+                    <h2>👑 مرحباً حافظ القمة</h2>
+                    <p class="welcome-message">أنت تتحكم الآن في إمبراطورية ماروان هوب التقنية. كل قرار يصنع مستقبلاً.</p>
                     
-                    <div class="principle">
-                        <div class="principle-icon">
-                            <i class="fas fa-language"></i>
+                    <div class="welcome-stats">
+                        <div class="stat-card quick">
+                            <i class="fas fa-rocket"></i>
+                            <div>
+                                <h3>72 ساعة</h3>
+                                <p>من الفكرة إلى المنصة</p>
+                            </div>
                         </div>
-                        <h3>العربية ليست عائقاً</h3>
-                        <p>أثبت أن الأدوات العربية يمكن أن تكون احترافية ومنافسة.</p>
-                    </div>
-                    
-                    <div class="principle">
-                        <div class="principle-icon">
-                            <i class="fas fa-graduation-cap"></i>
+                        <div class="stat-card quick">
+                            <i class="fas fa-star"></i>
+                            <div>
+                                <h3>75+</h3>
+                                <p>نجمة على GitHub</p>
+                            </div>
                         </div>
-                        <h3>التعلم المستمر</h3>
-                        <p>أتعلم من كل مشروع، وأطور من كل تحدٍ، أنمو مع كل خطأ.</p>
-                    </div>
-                    
-                    <div class="principle">
-                        <div class="principle-icon">
+                        <div class="stat-card quick">
                             <i class="fas fa-users"></i>
-                        </div>
-                        <h3>المجتمع أولاً</h3>
-                        <p>أبني مع المجتمع، أتعلم من الآخرين، وأساعد المبتدئين.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- قسم التواصل -->
-    <section id="contact" class="section contact-section">
-        <div class="container">
-            <h2 class="section-title">📞 لنبقى على تواصل</h2>
-            
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h3>البريد الإلكتروني</h3>
-                            <p>contact@marwanhub.tech</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fab fa-github"></i>
-                        <div>
-                            <h3>GitHub</h3>
-                            <p>github.com/marwanhubeg</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fab fa-twitter"></i>
-                        <div>
-                            <h3>Twitter/X</h3>
-                            <p>@marwanhub_tech</p>
+                            <div>
+                                <h3>100+</h3>
+                                <p>مستهدف مجتمعي</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="social-links">
-                    <a href="https://github.com/marwanhubeg" target="_blank" class="social-link">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="#" target="_blank" class="social-link">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" target="_blank" class="social-link">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="#" target="_blank" class="social-link">
-                        <i class="fab fa-telegram"></i>
-                    </a>
+                <!-- أقوال ملهمة -->
+                <div class="inspiration-quote">
+                    <p>"القيادة ليست منصباً، بل مسؤولية. والتقنية ليست أداة، بل رسالة."</p>
+                    <span>- مروان هوب، حافظ القمة</span>
                 </div>
             </div>
-        </div>
-    </section>
+
+            <!-- قسم الرؤية الاستراتيجية -->
+            <section class="dashboard-section">
+                <div class="section-header">
+                    <h3><i class="fas fa-bullseye"></i> الرؤية الاستراتيجية</h3>
+                    <button class="btn-edit">
+                        <i class="fas fa-edit"></i> تعديل
+                    </button>
+                </div>
+                
+                <div class="vision-container">
+                    <!-- البوصلة الاستراتيجية -->
+                    <div class="compass-card">
+                        <h4><i class="fas fa-compass"></i> بوصلة القيادة</h4>
+                        <div class="compass-points">
+                            <div class="point north">
+                                <span class="direction">الشمال</span>
+                                <span class="goal">الجودة المطلقة</span>
+                            </div>
+                            <div class="point east">
+                                <span class="direction">الشرق</span>
+                                <span class="goal">الابتكار</span>
+                            </div>
+                            <div class="point south">
+                                <span class="direction">الجنوب</span>
+                                <span class="goal">المجتمع</span>
+                            </div>
+                            <div class="point west">
+                                <span class="direction">الغرب</span>
+                                <span class="goal">التوسع</span>
+                            </div>
+                        </div>
+                        <div class="compass-center">
+                            <i class="fas fa-crown"></i>
+                            <span>حافظ القمة</span>
+                        </div>
+                    </div>
+                    
+                    <!-- جدول الرؤية -->
+                    <div class="vision-timeline">
+                        <h4><i class="fas fa-road"></i> خارطة الطريق</h4>
+                        <div class="timeline">
+                            <div class="timeline-item completed">
+                                <div class="timeline-date">الأسبوع 1</div>
+                                <div class="timeline-content">
+                                    <h5>✅ تأسيس الأساس</h5>
+                                    <p>CLI + موقع ويب + هوية</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item current">
+                                <div class="timeline-date">الأسبوع 2</div>
+                                <div class="timeline-content">
+                                    <h5>🔄 بناء المجتمع</h5>
+                                    <p>100 عضو نشط + فرق عمل</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item upcoming">
+                                <div class="timeline-date">الأسبوع 3</div>
+                                <div class="timeline-content">
+                                    <h5>📈 التوسع</h5>
+                                    <p>شراكات + محتوى + تأثير</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item upcoming">
+                                <div class="timeline-date">الشهر 2</div>
+                                <div class="timeline-content">
+                                    <h5>🚀 الإطلاق الكبير</h5>
+                                    <p>خدمات متقدمة + دخل</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- قسم القرارات الاستراتيجية -->
+            <section class="dashboard-section" id="decisions">
+                <div class="section-header">
+                    <h3><i class="fas fa-chess-board"></i> القرارات الاستراتيجية</h3>
+                    <button class="btn-new">
+                        <i class="fas fa-plus"></i> قرار جديد
+                    </button>
+                </div>
+                
+                <div class="decisions-grid">
+                    <!-- قرار عاجل -->
+                    <div class="decision-card urgent">
+                        <div class="decision-header">
+                            <span class="decision-priority">🔥 عاجل</span>
+                            <span class="decision-deadline">⏰ غداً</span>
+                        </div>
+                        <h4 class="decision-title">توظيف أول قائد مجتمع</h4>
+                        <p class="decision-desc">بناء فريق إدارة المجتمع لضمان النمو المستدام</p>
+                        
+                        <div class="decision-metrics">
+                            <div class="metric">
+                                <span class="metric-label">التأثير</span>
+                                <span class="metric-value high">عالي</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">المخاطر</span>
+                                <span class="metric-value low">منخفضة</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">الموارد</span>
+                                <span class="metric-value medium">متوسطة</span>
+                            </div>
+                        </div>
+                        
+                        <div class="decision-actions">
+                            <button class="btn-approve">✅ وافق</button>
+                            <button class="btn-review">🤔 أعد النظر</button>
+                            <button class="btn-deny">❌ رفض</button>
+                        </div>
+                    </div>
+                    
+                    <!-- قرار مهم -->
+                    <div class="decision-card important">
+                        <div class="decision-header">
+                            <span class="decision-priority">⭐ مهم</span>
+                            <span class="decision-deadline">⏰ أسبوع</span>
+                        </div>
+                        <h4 class="decision-title">إطلاق برنامج المساهمين</h4>
+                        <p class="decision-desc">نظام مكافآت وحوافز للمساهمين النشطين</p>
+                        
+                        <div class="decision-metrics">
+                            <div class="metric">
+                                <span class="metric-label">التأثير</span>
+                                <span class="metric-value medium">متوسط</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">المخاطر</span>
+                                <span class="metric-value low">منخفضة</span>
+                            </div>
+                        </div>
+                        
+                        <div class="decision-actions">
+                            <button class="btn-approve">✅ وافق</button>
+                            <button class="btn-review">🤔 أعد النظر</button>
+                        </div>
+                    </div>
+                    
+                    <!-- قرار استراتيجي -->
+                    <div class="decision-card strategic">
+                        <div class="decision-header">
+                            <span class="decision-priority">👑 استراتيجي</span>
+                            <span class="decision-deadline">⏰ شهر</span>
+                        </div>
+                        <h4 class="decision-title">شراكة مع منصة عربية</h4>
+                        <p class="decision-desc">تحالف مع منصة تعليمية عربية للتوسع</p>
+                        
+                        <div class="decision-metrics">
+                            <div class="metric">
+                                <span class="metric-label">التأثير</span>
+                                <span class="metric-value high">عالي</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">المخاطر</span>
+                                <span class="metric-value medium">متوسطة</span>
+                            </div>
+                        </div>
+                        
+                        <div class="decision-actions">
+                            <button class="btn-approve">✅ وافق</button>
+                            <button class="btn-delay">⏸️ أجل</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- قسم التحليلات -->
+            <section class="dashboard-section" id="analytics">
+                <div class="section-header">
+                    <h3><i class="fas fa-chart-line"></i> التحليلات الشاملة</h3>
+                    <div class="time-filters">
+                        <button class="time-filter active">اليوم</button>
+                        <button class="time-filter">أسبوع</button>
+                        <button class="time-filter">شهر</button>
+                        <button class="time-filter">3 أشهر</button>
+                    </div>
+                </div>
+                
+                <div class="analytics-grid">
+                    <!-- رسم بياني 1 -->
+                    <div class="analytics-card">
+                        <h4><i class="fas fa-users"></i> نمو المجتمع</h4>
+                        <div class="chart-container">
+                            <canvas id="communityChart"></canvas>
+                        </div>
+                        <div class="chart-summary">
+                            <div class="summary-item">
+                                <span class="summary-label">الأعضاء الجدد</span>
+                                <span class="summary-value positive">+15</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">نسبة النمو</span>
+                                <span class="summary-value positive">+25%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- رسم بياني 2 -->
+                    <div class="analytics-card">
+                        <h4><i class="fas fa-star"></i> نجاح المشاريع</h4>
+                        <div class="chart-container">
+                            <canvas id="projectsChart"></canvas>
+                        </div>
+                        <div class="chart-summary">
+                            <div class="summary-item">
+                                <span class="summary-label">النجوم الجديدة</span>
+                                <span class="summary-value positive">+8</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">التنزيلات</span>
+                                <span class="summary-value positive">+42</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- مؤشرات سريعة -->
+                    <div class="analytics-card">
+                        <h4><i class="fas fa-tachometer-alt"></i> مؤشرات سريعة</h4>
+                        <div class="quick-metrics">
+                            <div class="quick-metric">
+                                <div class="metric-icon">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <div class="metric-content">
+                                    <span class="metric-value">1,247</span>
+                                    <span class="metric-label">زيارة الموقع</span>
+                                </div>
+                            </div>
+                            
+                            <div class="quick-metric">
+                                <div class="metric-icon">
+                                    <i class="fas fa-code-branch"></i>
+                                </div>
+                                <div class="metric-content">
+                                    <span class="metric-value">18</span>
+                                    <span class="metric-label">مساهمة جديدة</span>
+                                </div>
+                            </div>
+                            
+                            <div class="quick-metric">
+                                <div class="metric-icon">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <div class="metric-content">
+                                    <span class="metric-value">47</span>
+                                    <span class="metric-label">تفاعل مجتمعي</span>
+                                </div>
+                            </div>
+                            
+                            <div class="quick-metric">
+                                <div class="metric-icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <div class="metric-content">
+                                    <span class="metric-value">3</span>
+                                    <span class="metric-label">شركاء محتملون</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- قسم التحالفات -->
+            <section class="dashboard-section" id="alliances">
+                <div class="section-header">
+                    <h3><i class="fas fa-handshake"></i> التحالفات والشراكات</h3>
+                    <button class="btn-new">
+                        <i class="fas fa-plus"></i> اقتراح تحالف
+                    </button>
+                </div>
+                
+                <div class="alliances-container">
+                    <!-- التحالفات النشطة -->
+                    <div class="alliances-active">
+                        <h4><i class="fas fa-bolt"></i> تحالفات نشطة</h4>
+                        <div class="alliance-list">
+                            <div class="alliance-item">
+                                <div class="alliance-logo">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div class="alliance-info">
+                                    <h5>GitHub</h5>
+                                    <p>منصة المستودعات - تحالف تقني</p>
+                                    <div class="alliance-status active">
+                                        <i class="fas fa-circle"></i> نشط منذ 2026
+                                    </div>
+                                </div>
+                                <div class="alliance-value">
+                                    <span class="value-label">القيمة</span>
+                                    <span class="value-number">ممتازة</span>
+                                </div>
+                            </div>
+                            
+                            <div class="alliance-item">
+                                <div class="alliance-logo">
+                                    <i class="fab fa-npm"></i>
+                                </div>
+                                <div class="alliance-info">
+                                    <h5>npm</h5>
+                                    <p>سجل الحزم - توزيع CLI</p>
+                                    <div class="alliance-status active">
+                                        <i class="fas fa-circle"></i> نشط منذ 2026
+                                    </div>
+                                </div>
+                                <div class="alliance-value">
+                                    <span class="value-label">القيمة</span>
+                                    <span class="value-number">جيدة</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- تحالفات مقترحة -->
+                    <div class="alliances-proposed">
+                        <h4><i class="fas fa-lightbulb"></i> تحالفات مقترحة</h4>
+                        <div class="proposal-list">
+                            <div class="proposal-item">
+                                <h5>منصة تعليم عربية</h5>
+                                <p>شراكة محتوى وتعليم مشترك</p>
+                                <div class="proposal-metrics">
+                                    <span class="metric"><i class="fas fa-users"></i> 50K+ متابع</span>
+                                    <span class="metric"><i class="fas fa-chart-line"></i> تأثير عالي</span>
+                                </div>
+                                <button class="btn-propose">🤝 اقترح تحالف</button>
+                            </div>
+                            
+                            <div class="proposal-item">
+                                <h5>مجتمع مبرمجين عربي</h5>
+                                <p>تعاون في الفعاليات والمسابقات</p>
+                                <div class="proposal-metrics">
+                                    <span class="metric"><i class="fas fa-users"></i> 10K+ عضو</span>
+                                    <span class="metric"><i class="fas fa-comments"></i> تفاعل عالي</span>
+                                </div>
+                                <button class="btn-propose">🤝 اقترح تحالف</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- قسم الأنظمة الآلية -->
+            <section class="dashboard-section" id="automation">
+                <div class="section-header">
+                    <h3><i class="fas fa-robot"></i> الأنظمة الآلية</h3>
+                    <div class="automation-toggle">
+                        <span class="toggle-label">تشغيل الأنظمة الذكية</span>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="automation-grid">
+                    <!-- نظام 1 -->
+                    <div class="automation-card">
+                        <div class="automation-header">
+                            <div class="automation-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>نظام الأمان التلقائي</h4>
+                        </div>
+                        <p class="automation-desc">فحص وتحديث أمني تلقائي للمشاريع</p>
+                        <div class="automation-status">
+                            <span class="status active"><i class="fas fa-circle"></i> نشط</span>
+                            <span class="last-run">⏱️ جرى قبل 2 ساعة</span>
+                        </div>
+                    </div>
+                    
+                    <!-- نظام 2 -->
+                    <div class="automation-card">
+                        <div class="automation-header">
+                            <div class="automation-icon">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <h4>نظام النسخ الاحتياطي</h4>
+                        </div>
+                        <p class="automation-desc">نسخ احتياطي تلقائي يومي وأسبوعي</p>
+                        <div class="automation-status">
+                            <span class="status active"><i class="fas fa-circle"></i> نشط</span>
+                            <span class="last-run">⏱️ جرى اليوم 02:00</span>
+                        </div>
+                    </div>
+                    
+                    <!-- نظام 3 -->
+                    <div class="automation-card">
+                        <div class="automation-header">
+                            <div class="automation-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h4>نظام التقارير</h4>
+                        </div>
+                        <p class="automation-desc">توليد تقارير أداء أسبوعية وشهرية</p>
+                        <div class="automation-status">
+                            <span class="status warning"><i class="fas fa-circle"></i> يحتاج إعداد</span>
+                            <button class="btn-configure">⚙️ إعداد</button>
+                        </div>
+                    </div>
+                    
+                    <!-- نظام 4 -->
+                    <div class="automation-card">
+                        <div class="automation-header">
+                            <div class="automation-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h4>نظام التفاعل المجتمعي</h4>
+                        </div>
+                        <p class="automation-desc">ترحيب تلقائي ومتابعة للأعضاء الجدد</p>
+                        <div class="automation-status">
+                            <span class="status inactive"><i class="fas fa-circle"></i> غير نشط</span>
+                            <button class="btn-activate">▶️ تفعيل</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
 
     <!-- الفوتر -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <i class="fas fa-code"></i>
-                    <span>ماروان هوب</span>
+    <footer class="dashboard-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="footer-logo">
+                    <i class="fas fa-crown"></i>
+                    <span>حافظ القمة</span>
                 </div>
-                <p class="footer-description">
-                    بناء المستقبل الرقمي العربي، أداة بأداة
-                </p>
-                <p class="footer-copyright">
-                    © 2026 ماروان هوب. جميع الحقوق محفوظة.
-                </p>
+                <p class="footer-text">لوحة تحكم ذكية لقيادة إمبراطورية ماروان هوب التقنية</p>
+            </div>
+            
+            <div class="footer-stats">
+                <div class="footer-stat">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">مراقبة مستمرة</span>
+                </div>
+                <div class="footer-stat">
+                    <span class="stat-number">99.9%</span>
+                    <span class="stat-label">استقرار النظام</span>
+                </div>
+                <div class="footer-stat">
+                    <span class="stat-number">⚡</span>
+                    <span class="stat-label">استجابة فورية</span>
+                </div>
+            </div>
+            
+            <div class="footer-actions">
+                <button class="footer-btn" onclick="location.reload()">
+                    <i class="fas fa-redo"></i> تحديث البيانات
+                </button>
+                <button class="footer-btn" id="exportData">
+                    <i class="fas fa-download"></i> تصدير التقارير
+                </button>
+                <button class="footer-btn" id="emergencyMeeting">
+                    <i class="fas fa-video"></i> اجتماع طارئ
+                </button>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2026 ماروان هوب - لوحة التحكم الذكية لحافظ القمة</p>
+            <div class="footer-links">
+                <span>الإصدار: 1.0.0</span>
+                <span>آخر تحديث: اليوم 18:45</span>
+                <a href="#">الشروط والأحكام</a>
+                <a href="#">سياسة الخصوصية</a>
             </div>
         </div>
     </footer>
 
     <!-- JavaScript -->
-    <script src="assets/js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/notifications.js"></script>
+    <script src="js/automation.js"></script>
 </body>
 </html>

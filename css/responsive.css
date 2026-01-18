@@ -1,0 +1,497 @@
+/* أنماط متجاوبة للوحة التحكم */
+
+/* شاشات كبيرة جداً (أكبر من 1600px) */
+@media (min-width: 1600px) {
+    .main-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        margin-left: 250px;
+    }
+    
+    .analytics-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .decisions-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* شاشات كبيرة (1200px - 1599px) */
+@media (max-width: 1599px) and (min-width: 1200px) {
+    .main-content {
+        padding: var(--space-lg);
+    }
+    
+    .analytics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .decisions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .alliances-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* شاشات متوسطة (992px - 1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+    .sidebar {
+        width: 220px;
+    }
+    
+    .main-content {
+        margin-left: 220px;
+    }
+    
+    .vision-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .welcome-stats {
+        flex-wrap: wrap;
+    }
+    
+    .stat-card.quick {
+        flex: 0 0 calc(50% - var(--space-lg));
+    }
+}
+
+/* شاشات صغيرة (768px - 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+    .sidebar {
+        width: 70px;
+        padding: var(--space-md) 0;
+    }
+    
+    .sidebar-header h3,
+    .section-title,
+    .menu-item span,
+    .system-status h4,
+    .status-item span {
+        display: none;
+    }
+    
+    .main-content {
+        margin-left: 70px;
+        padding: var(--space-md);
+    }
+    
+    .menu-item {
+        justify-content: center;
+        padding: var(--space-md);
+    }
+    
+    .menu-section {
+        padding: 0 var(--space-sm);
+        margin-bottom: var(--space-lg);
+    }
+    
+    .system-status {
+        margin: var(--space-md);
+        padding: var(--space-md);
+    }
+    
+    .nav-container {
+        padding: 0 var(--space-md);
+    }
+    
+    .search-input {
+        width: 150px;
+    }
+    
+    .search-input:focus {
+        width: 200px;
+    }
+    
+    .user-info {
+        display: none;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: var(--space-lg);
+        text-align: center;
+    }
+    
+    .footer-stats {
+        order: 2;
+    }
+    
+    .footer-actions {
+        order: 3;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: var(--space-md);
+        text-align: center;
+    }
+}
+
+/* شاشات الهواتف (576px - 767px) */
+@media (max-width: 767px) and (min-width: 576px) {
+    .sidebar {
+        display: none;
+    }
+    
+    .main-content {
+        margin-left: 0;
+        padding: var(--space-md);
+    }
+    
+    .top-navbar {
+        padding: var(--space-xs) 0;
+    }
+    
+    .nav-container {
+        padding: 0 var(--space-sm);
+    }
+    
+    .brand-text h1 {
+        font-size: 1.2rem;
+    }
+    
+    .search-container {
+        display: none;
+    }
+    
+    .user-profile {
+        padding: var(--space-xs);
+    }
+    
+    .user-avatar {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .welcome-banner {
+        padding: var(--space-lg);
+    }
+    
+    .welcome-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .welcome-stats {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+    
+    .stat-card.quick {
+        width: 100%;
+    }
+    
+    .dashboard-section {
+        padding: var(--space-lg);
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-md);
+    }
+    
+    .analytics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .decisions-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .automation-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .decision-actions {
+        flex-wrap: wrap;
+    }
+    
+    .decision-actions button {
+        flex: 0 0 calc(50% - var(--space-sm));
+    }
+    
+    .time-filters {
+        flex-wrap: wrap;
+    }
+    
+    .footer-content,
+    .footer-bottom {
+        flex-direction: column;
+        gap: var(--space-lg);
+        text-align: center;
+    }
+    
+    .footer-stats {
+        justify-content: center;
+    }
+    
+    .footer-actions {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .footer-btn {
+        flex: 0 0 calc(50% - var(--space-md));
+    }
+}
+
+/* شاشات الهواتف الصغيرة (أقل من 576px) */
+@media (max-width: 575px) {
+    .sidebar {
+        display: none;
+    }
+    
+    .main-content {
+        margin-left: 0;
+        padding: var(--space-sm);
+    }
+    
+    .top-navbar {
+        padding: var(--space-xs) 0;
+    }
+    
+    .nav-container {
+        padding: 0 var(--space-sm);
+    }
+    
+    .brand-text h1 {
+        font-size: 1rem;
+    }
+    
+    .brand-subtitle {
+        font-size: 0.7rem;
+    }
+    
+    .nav-btn {
+        padding: var(--space-xs);
+        font-size: 1rem;
+    }
+    
+    .notification-badge {
+        width: 15px;
+        height: 15px;
+        font-size: 0.6rem;
+    }
+    
+    .search-container,
+    .user-info {
+        display: none;
+    }
+    
+    .user-avatar {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+    
+    .welcome-banner {
+        padding: var(--space-md);
+        margin-bottom: var(--space-lg);
+    }
+    
+    .welcome-content h2 {
+        font-size: 1.3rem;
+    }
+    
+    .welcome-message {
+        font-size: 0.9rem;
+    }
+    
+    .welcome-stats {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+    
+    .stat-card.quick {
+        width: 100%;
+        padding: var(--space-md);
+    }
+    
+    .stat-card.quick i {
+        font-size: 1.5rem;
+    }
+    
+    .stat-card.quick h3 {
+        font-size: 1.3rem;
+    }
+    
+    .dashboard-section {
+        padding: var(--space-md);
+        margin-bottom: var(--space-lg);
+    }
+    
+    .section-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .vision-container {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+    
+    .compass-card {
+        height: 250px;
+        padding: var(--space-lg);
+    }
+    
+    .compass-points {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .compass-center {
+        width: 60px;
+        height: 60px;
+        font-size: 0.8rem;
+    }
+    
+    .alliances-container {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+    
+    .alliance-item {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-md);
+    }
+    
+    .alliance-value {
+        text-align: center;
+    }
+    
+    .decision-metrics {
+        flex-wrap: wrap;
+        gap: var(--space-md);
+    }
+    
+    .metric {
+        flex: 0 0 calc(50% - var(--space-md));
+    }
+    
+    .decision-actions {
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+    
+    .decision-actions button {
+        width: 100%;
+    }
+    
+    .quick-metrics {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+    
+    .footer-content {
+        padding: var(--space-lg) var(--space-md);
+    }
+    
+    .footer-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--space-md);
+    }
+}
+
+/* تحسينات للأجهزة التي تدعم hover */
+@media (hover: hover) {
+    .menu-item:hover i,
+    .nav-btn:hover i,
+    .footer-btn:hover i {
+        transform: scale(1.1);
+        transition: transform 0.3s ease;
+    }
+    
+    .decision-card:hover .decision-title {
+        color: var(--primary-color);
+        transition: color 0.3s ease;
+    }
+}
+
+/* تحسينات للأجهزة التي لا تدعم hover */
+@media (hover: none) {
+    .menu-item:active,
+    .nav-btn:active,
+    .footer-btn:active {
+        background-color: var(--primary-color);
+        color: white;
+    }
+    
+    .decision-card:active {
+        transform: scale(0.98);
+    }
+}
+
+/* تحسينات للوضع الداكن */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #0a0a0a;
+    }
+    
+    .dashboard-section,
+    .automation-card,
+    .decision-card,
+    .alliance-item,
+    .proposal-item {
+        background-color: #1a1a1a;
+        border-color: #333;
+    }
+    
+    .sidebar {
+        background-color: #111;
+    }
+    
+    .top-navbar {
+        background-color: #111;
+        border-bottom-color: #333;
+    }
+}
+
+/* تحسينات للطباعة */
+@media print {
+    .top-navbar,
+    .sidebar,
+    .footer-actions,
+    .btn-edit,
+    .btn-new,
+    .time-filters,
+    .decision-actions,
+    .btn-propose,
+    .automation-toggle,
+    .footer-btn {
+        display: none !important;
+    }
+    
+    .main-content {
+        margin-left: 0;
+        padding: 0;
+    }
+    
+    body {
+        background-color: white;
+        color: black;
+    }
+    
+    .dashboard-section {
+        border: 1px solid #ddd;
+        box-shadow: none;
+        margin-bottom: 20px;
+        page-break-inside: avoid;
+    }
+    
+    .welcome-banner {
+        background: white;
+        color: black;
+        border: 1px solid #ddd;
+    }
+}
