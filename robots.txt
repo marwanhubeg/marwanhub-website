@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://marwanhub.tech/sitemap.xml
